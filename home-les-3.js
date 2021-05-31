@@ -96,11 +96,13 @@ console.log(maxNumber (1, 2));
 
 let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 }
 
-function costs(obj){
-let a = Object.values(obj);
-    var result = a.reduce(function(sum, current) {
-        return sum + current;
-    }, 0);
+function  costs(obj){
+    let total = 0;
+
+    for (let property in obj) {
+        total += object[property];
+    }
+    return total;
 }
 
 console.log(costs(salaries));
