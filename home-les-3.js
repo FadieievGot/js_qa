@@ -115,12 +115,35 @@ console.log(costs(salaries));
  */
 let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 };
 function maxSalary(obj){
-    let total = 0;
 
-    for(let property in obj){
-        total > obj[property];
-    }
-    return total;
+    var allvalues = Object.keys(obj).map(function(key){return obj[key];});
+    return allvalues;
 }
 
 console.log(maxSalary(salaries));
+
+/**
+ * 3.2) Створіть функцію multiplyNumeric (obj), яка помножує всі числові властивості об"єкта на 2
+ *
+ * Наприклад:
+ * let menu = { width: 200, height: 300, title: "My menu" };
+ *
+ * multiplyNumeric(menu);
+ * // після виклику функції  multiplyNumeric - menu = { width: 400, height: 600, title: "My menu" }; Майте на увазі
+ * multiplyNumeric не повинна повертати нічого. Вона повинна модифікувати об"єкт на місці
+ * P.S. Використовуйте typeof метод для перевірки типу значень.
+ */
+
+let menu = { width: 200, height: 300, title: "My menu" };
+function  multiplyNumeric(obj){
+    for (let property in obj) {
+        let as = typeof obj[property];
+        if (as == "number"){
+            obj[property] *= 2;
+        }
+     }
+}
+
+multiplyNumeric(menu);
+console.log(menu);
+
