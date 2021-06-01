@@ -16,3 +16,12 @@
 // const name1 = name;
 // console.log(name1, age);
 
+let user = {
+    name: "Вася"
+};
+
+let id = Symbol("id");
+
+user[id] = 1;
+
+console.log( user[id] );

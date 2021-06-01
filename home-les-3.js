@@ -113,14 +113,21 @@ console.log(costs(salaries));
  * Напишіть функцію, яка повертає ім’я та значення працівника, який отримує найбільшу зарплату.
  *
  */
-let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 };
+let salaries = { Mykola: 250, Pavlo: 250, Petro: 500};
 function maxSalary(obj){
-
-    var allvalues = Object.keys(obj).map(function(key){return obj[key];});
-    return allvalues;
+    let maxi = 0;
+    let orderOfMaxi = -1;
+    for (let property in obj) {
+        if (maxi < obj[property]) {
+            maxi = obj[property];
+            orderOfMaxi += 1;
+        } else orderOfMaxi += 1;
+    }
+    let masOfNames = Object.keys(obj);
+    return `Найбильшу зарплату в ${maxi} отримує ${masOfNames[orderOfMaxi]}`;
 }
 
-console.log(maxSalary(salaries));
+ console.log(maxSalary(salaries));
 
 /**
  * 3.2) Створіть функцію multiplyNumeric (obj), яка помножує всі числові властивості об"єкта на 2
@@ -137,8 +144,7 @@ console.log(maxSalary(salaries));
 let menu = { width: 200, height: 300, title: "My menu" };
 function  multiplyNumeric(obj){
     for (let property in obj) {
-        let as = typeof obj[property];
-        if (as == "number"){
+        if (typeof obj[property] == "number"){
             obj[property] *= 2;
         }
      }
