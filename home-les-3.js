@@ -116,14 +116,14 @@ console.log(costs(salaries));
 let salaries = { Mykola: 250, Pavlo: 250, Petro: 500};
 function maxSalary(obj){
     let sum = 0;
-    let big = '';
+    let name = '';
     for (let key in obj) {
         if(obj[key] > sum) {
             sum = obj[key];
-            big = key;
+            name = key;
         }
     }
-    return `Найбильшу зарплату в ${sum} отримує ${big}`;
+    return `Найбильшу зарплату в ${sum} отримує ${name}`;
 }
 
  console.log(maxSalary(salaries));
