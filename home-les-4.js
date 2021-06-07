@@ -9,7 +9,7 @@ const numbers = [1, -1, 2, 3];
 function sum(obj) {
     return obj.reduce(function(sum, current) {
         return sum + current;
-    }, 0);
+    });
 }
 
 // Виклик функції
