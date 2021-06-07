@@ -96,7 +96,7 @@ console.log(maxNumber (1, 2));
 
 let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 }
 
-function  costs(obj){
+function costs(obj){
     let total = 0;
 
     for (let property in obj) {
@@ -116,7 +116,7 @@ console.log(costs(salaries));
 let salaries = { Mykola: 250, Pavlo: 250, Petro: 500};
 function maxSalary(obj){
     let sum = 0;
-    let name = '';
+    let name;
     for (let key in obj) {
         if(obj[key] > sum) {
             sum = obj[key];
