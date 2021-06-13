@@ -1,25 +1,25 @@
-// Ex.1 Rewrite function with Class syntax
-function createCar(brand, model, speed) {
-    let car = {
-        // properties
-        brand,
-        model, // We use the function parameter
-        speed,
-        // methods:
-        accelerate: function(amount) {
-            this.speed += amount;
-        },
-
-        brake: function(amount) {
-            this.speed -= amount;
-        },
-
-        status: function() {
-            return this.brand + this.model + " running at " + this.speed + " km/h";
-        }
-    };
-    return car;
-}
+// // Ex.1 Rewrite function with Class syntax
+// function createCar(brand, model, speed) {
+//     let car = {
+//         // properties
+//         brand,
+//         model, // We use the function parameter
+//         speed,
+//         // methods:
+//         accelerate: function(amount) {
+//             this.speed += amount;
+//         },
+//
+//         brake: function(amount) {
+//             this.speed -= amount;
+//         },
+//
+//         status: function() {
+//             return this.brand + this.model + " running at " + this.speed + " km/h";
+//         }
+//     };
+//     return car;
+// }
 
 // Create a Car object using the class syntax
 class Car {
@@ -36,7 +36,7 @@ class Car {
         this.speed -= amount;
     };
     status(){
-        return this.brand + this.model + " running at " + this.speed + " km/h";
+        return `${this.brand} ${this.model} running at ${this.speed} km/h`;
     };
 }
 
@@ -54,7 +54,7 @@ class CarColor extends Car{
         this.color = color;
     }
     carColor(){
-        return this.brand + this.model + " has " + this.color + " color";
+        return `${this.brand} ${this.model} has ${this.color} color`;
     }
 }
 
