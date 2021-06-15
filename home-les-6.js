@@ -19,23 +19,21 @@ async function loadJson(url) {
 
 
 
-// // Ask for a user name until github returns a valid user
-// function demoGithubUser() {
-//     let name = prompt("Enter a name?", "iliakan");
-//
-//     return loadJson(`https://api.github.com/users/${name}`)
-//         .then(user => {
-//             alert(`Full name: ${user.name}.`);
-//             return user;
-//         })
-//         .catch(err => {
-//             if (err instanceof HttpError && err.response.status == 404) {
-//                 alert("No such user, please reenter.");
-//                 return demoGithubUser();
-//             } else {
-//                 throw err;
-//             }
-//         });
-// }
-//
-// demoGithubUser();
+// Ask for a user name until github returns a valid user
+async function demoGithubUser() {
+    let name = await prompt("Enter a name?", "iliakan");
+    let user = await loadJson(`https://api.github.com/users/${name}`);
+    try {
+        await alert(`Full name: ${user.name}.`);
+        return user;
+    }catch (err){
+        if (err instanceof HttpError && err.response.status == 404) {
+            await alert("No such user, please reenter.");
+            return demoGithubUser();
+        } else {
+            throw err;
+        }
+    }
+}
+
+demoGithubUser();
