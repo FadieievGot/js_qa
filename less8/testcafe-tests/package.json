@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "testcafe chrome tests/new-test.js"
   },
   "author": "ofadieiev",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "testcafe": "^1.14.2"
   }
 }
